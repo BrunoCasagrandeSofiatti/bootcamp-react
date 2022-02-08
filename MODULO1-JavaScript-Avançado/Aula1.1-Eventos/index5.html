@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div,p,a{
+        padding: 15px 30px;
+        display: block;
+        border: 2px solid black;
+        background: blanchedalmond;
+      }
+    </style>
+    <title>Aula 1 - Propagação de eventos - Bubbling</title>
+  </head>
+  <body>
+    <div>DIV
+      <p >P
+        <a href="#">A</a>
+      </p>
+    </div>
+  </body>
+</html>
+
+<script>
+  let elements = document.querySelectorAll("div, p, a");
+
+  function showtag(){
+    alert("Captura: " + this.tagName);
+  }
+  
+  for (let elem of elements){
+    elem.addEventListener("click", showtag, true);
+  }
+
+</script>

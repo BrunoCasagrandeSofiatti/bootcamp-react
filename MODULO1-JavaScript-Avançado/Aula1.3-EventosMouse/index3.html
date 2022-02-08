@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Aula 1.3 - </title>
+  <style>
+      .selected{
+        background: blue;
+      }
+      li{
+        cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+  Selecione os itens da lista:
+  <br>
+  <ul id="ul">
+    <li>Desenvolvimento de JavaScript</li>
+    <li>Arquitetura de aplicações web</li>
+    <li>Banco de dados</li>
+    <li>Intrudução ao desenvolvimento web</li>
+    <li>Desenvolvimento backend</li>
+  </ul>
+</body>
+</html>
+
+<script>
+  let ul = document.getElementById('ul');
+
+  ul.addEventListener('click', selectItem);
+
+  function selectItem( event ){
+      if(event.target.tagName != "LI") return;
+
+      if(event.ctrlKey || event.metaKey) {
+        toggleSelect(event.target);
+      }else{
+        singleSelect(event.target);
+      }
+  }
+
+  function singleSelect( li ){
+
+      let selected = ul.querySelectorAll('.selected');
+
+      for(let elem of selected){
+        elem.classList.remove('selected');
+      }
+
+      li.classList.add('selected');
+  }
+
+  function toggleSelect( li ) {
+    li.classList.toggle('selected');
+  }
+
+</script>

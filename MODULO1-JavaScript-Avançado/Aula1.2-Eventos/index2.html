@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Aula 1.2 - UIEvent Resize</title>
+</head>
+<body>
+  <p>Exemplo para redimensionamento de janela</p>
+  
+  <p>Redimencionou a página: <span id="teste">0</span> vezes.</p>
+</body>
+</html>
+
+<script>
+  window.addEventListener('resize', countResize);
+
+  let count = 0;
+
+  function countResize(){
+    let txtElement = count += 1;
+
+    document.getElementById('teste').innerHTML = txtElement;
+  }
+
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Aula 1.3 - MouseEvent click</title>
+</head>
+<body>
+    Exemplo de propriedade dos eventos
+    <button type="button"> Click Aqui</button>
+</body>
+</html>
+
+<script>
+    let btn = document.querySelector('button');
+    console.log(btn);
+
+    btn.addEventListener('click', showPosition, false);
+
+    function showPosition( event ){
+      alert('Possição x: ' + event.screenX + 'possição y: '+ event.screenY);
+    }
+
+</script>
